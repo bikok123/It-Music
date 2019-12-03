@@ -1,0 +1,27 @@
+{% extends 'auth_base.html' %}
+{% block singin %}
+    <div class="b-t">
+        <div class="center-block w-xxl w-auto-xs p-y-md text-center">
+            <div class="p-a-md">
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        Incorrect username or password.
+                    </div>
+                {% endif %}
+                <form name="form" action="{% url 'login' %}" method="post"> {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="password" name="password" required>
+                    </div>
+                        <button type="submit" class="btn btn-lg black p-x-lg">Sign in</button>
+                    </form>
+                    <div>
+                      Do not have an account?
+                        <a href="{% url 'sign_up' %}" class="text-primary _600">Sign up</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

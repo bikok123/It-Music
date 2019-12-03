@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block search %}
+    <div class="padding">
+        <form action="{% url 'find' %}" class="m-b-md" method="GET">
+            <div class="input-group input-group-lg">
+                <input name="q" type="text" class="form-control" placeholder="Type keyword" required>
+                <span class="input-group-btn">
+                    <input class="btn b-a no-shadow white" type="submit" value="Search"/>
+                </span>
+            </div>
+        </form>
+        <p class="m-b-md"><strong>{{ count }}</strong> Results found for: <strong>{{ query }}</strong></p>
+        <div class="m-y">
+            <div class="row item-list item-list-lg item-list-by m-b">
+                {% for object in object_list %}
+                    {% with object as c %}
+                        <div class="col-xs-12">
+                            <div class="item r" data-id="item-9">
+                                <div class="item-media ">
+                                    <a href="{{ object.file.url }}" class="item-media-content" style="background-image: url({{ object.image.url }});"></a>
+                                    <div class="item-overlay center">
+                                        <button onclick="cs_change_music('{{ object.file.url }}')" class="btn-playpause">Play</button>
+                                    </div>
+                                </div>
+                                <div class="item-info">
+                                    <div class="item-overlay bottom text-right">
+                                        <a href="#" class="btn-favorite"><i class="fa fa-heart-o"></i></a>
+                                        <a href="#" class="btn-more" data-toggle="dropdown"><i class="fa fa-ellipsis-h"></i></a>
+                                        <div class="dropdown-menu pull-right black lt"></div>
+                                    </div>
+                                    <div class="item-title text-ellipsis">
+                                        <a href="track.detail.html">{{ object.name }}</a>
+                                    </div>
+                                    <div class="item-author text-sm text-ellipsis ">
+                                        <a href="artist.detail.html" class="text-muted">{{ object.artist }}</a>
+                                    </div>
+                                    <div class="item-meta text-sm text-muted">
+                                      <span class="item-meta-tag visible-list"><a href="browse.html"></a></span>
+                                    </div>
+
+                                    <div class="item-except visible-list text-sm text-muted h-2x m-t-sm">
+                                        {{ object.album }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

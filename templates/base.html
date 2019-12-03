@@ -1,0 +1,296 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ITmusic</title>
+
+    <link rel="apple-touch-icon" href="{% static 'img/logo.png' %}">
+    <meta name="apple-mobile-web-app-title" content="Flatkit">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="196x196" href="{% static 'img/logo.png' %}">
+
+    <link rel="stylesheet" href="{% static 'css/animate.css/animate.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/glyphicons/glyphicons.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/material-design-icons/material-design-icons.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap/dist/css/bootstrap.min.css' %}" type="text/css" />
+
+    <link rel="stylesheet" href="{% static 'css/styles/app.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/styles/style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/styles/font.css' %}" type="text/css" />
+
+    <link rel="stylesheet" href="{% static 'libs/owl.carousel/dist/assets/owl.carousel.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'libs/owl.carousel/dist/assets/owl.theme.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'libs/mediaelement/build/mediaelementplayer.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'libs/mediaelement/build/mep.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/player.css' %}" type="text/css" />
+
+    <script src="{% static 'libs/jquery/dist/jquery.js' %}"></script>
+    <script src="{% static 'libs/tether/dist/js/tether.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/dist/js/bootstrap.js' %}"></script>
+    <script src="{% static 'libs/jQuery-Storage-API/jquery.storageapi.min.js' %}"></script>
+    <script src="{% static 'libs/jquery.stellar/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'libs/owl.carousel/dist/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'libs/jscroll/jquery.jscroll.min.js' %}"></script>
+    <script src="{% static 'libs/PACE/pace.min.js' %}"></script>
+    <script src="{% static 'libs/jquery-pjax/jquery.pjax.js' %}"></script>
+    <script src="{% static 'libs/mediaelement/build/mediaelement-and-player.min.js' %}"></script>
+    <script src="{% static 'libs/mediaelement/build/mep.js' %}"></script>
+    <script src="{% static 'libs/scripts/player.js' %}"></script>
+    <script src="{% static 'js/play.js' %}"></script>
+    <script src="{% static 'js/add_to_playlist.js' %}"></script>
+    <script src="{% static 'js/modal.js' %}"></script>
+    <script src="{% static 'js/remove_from_playlist.js' %}"></script>
+    <script src="{% static 'js/playerjs.js' %}"></script>
+
+</head>
+
+<body>
+
+    <div id="aside" class="app-aside modal fade nav-dropdown">
+        <div class="left navside grey dk" data-layout="column">
+            <div class="navbar no-radius">
+                <a href="{% url 'index' %}" class="navbar-brand md">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32">
+                        <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.2)"></circle>
+                        <circle cx="24" cy="24" r="22" fill="#1c202b" class="brand-color"></circle>
+                        <circle cx="24" cy="24" r="10" fill="#ffffff"></circle>
+                        <circle cx="13" cy="13" r="2"  fill="#ffffff" class="brand-animate"></circle>
+                        <path d="M 14 24 L 24 24 L 14 44 Z" fill="#FFFFFF"></path>
+                        <circle cx="24" cy="24" r="3" fill="#000000"></circle>
+                    </svg>
+
+                    <img src="#" alt="." class="hide">
+                    <span class="hidden-folded inline">ITMUSIC</span>
+                </a>
+            </div>
+            <div data-flex class="hide-scroll">
+                <nav class="scroll nav-stacked nav-active-primary">
+                    <ul class="nav" data-ui-nav>
+                        <li class="nav-header hidden-folded">
+                        <span class="text-xs text-muted">Main</span>
+                        </li>
+                        <li>
+                        <a href="">
+                          <span class="nav-icon">
+                            <i class="material-icons">
+                              play_circle_outline
+                            </i>
+                          </span>
+                          <span class="nav-text">Discover</span>
+                        </a>
+                        </li>
+                        <li>
+                        <a href="">
+                          <span class="nav-icon">
+                            <i class="material-icons">
+                              sort
+                            </i>
+                          </span>
+                          <span class="nav-text">!</span>
+                        </a>
+                        </li>
+                        <li>
+                        <a href="">
+                          <span class="nav-icon">
+                            <i class="material-icons">
+                              trending_up
+                            </i>
+                          </span>
+                          <span class="nav-text">!</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'search' %}">
+                              <span class="nav-icon">
+                                <i class="material-icons">
+                                  search
+                                </i>
+                              </span>
+                              <span class="nav-text">Search</span>
+                            </a>
+                        </li>
+                        <li>
+                        <a href="{% url 'contacts' %}">
+                          <span class="nav-icon">
+                            <i class="material-icons">
+                              portrait
+                            </i>
+                          </span>
+                          <span class="nav-text">Contacts</span>
+                        </a>
+                        </li>
+                        <li class="nav-header hidden-folded m-t">
+                        <span class="text-xs text-muted">Your collection</span>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="nav-label">
+                                <b class="label">8</b>
+                                </span>
+                                <span class="nav-icon">
+                                  <i class="material-icons">
+                                    list
+                                  </i>
+                                </span>
+                                <span class="nav-text">Tracks</span>
+                            </a>
+                        </li>
+                      <li>
+                          <a href="">
+                              <span class="nav-icon">
+                                  <i class="material-icons">
+                                      queue_music
+                                  </i>
+                              </span>
+                              <span class="nav-text">Playlists</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="">
+                              <span class="nav-icon">
+                                  <i class="material-icons">
+                                    favorite_border
+                                  </i>
+                              </span>
+                              <span class="nav-text">Likes</span>
+                          </a>
+                      </li>
+                    </ul>
+                </nav>
+            </div>
+            <div data-flex-no-shrink>
+            <div class="nav-fold dropup">
+                <div class="row">
+                {% if not user.is_authenticated %}
+                      <div class="col-sm-6">
+                          <a href="{% url 'sign_in' %}" class="nav-link"><span class="btn btn-sm rounded primary _600">
+                          Sign in
+                        </span></a>
+                      </div>
+                      <div class="col-sm-6">
+                          <a href="{% url 'sign_up' %}" class="nav-link"><span class="btn btn-sm rounded primary _600">
+                          Sign up
+                        </span></a>
+                      </div>
+                {% else %}
+                  <a>
+                          <span class="pull-left">
+                            <img src="{% static 'img/a3.jpg' %}" alt="..." class="w-32 img-circle">
+                          </span>
+                          <span class="clear hidden-folded p-x p-y-xs">
+                            <a href="{% url 'profile' %}"><span class="block _500 text-ellipsis">{{ user.get_full_name }}</span></a>
+                          </span>
+                  </a>
+                  <a class="nav-link" href="{% url 'logout' %}">
+                          <span class="btn btn-sm rounded primary _600">
+                          Sign out
+                          </span>
+                  </a>
+              {% endif %}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="app-content white bg box-shadow-z2" role="main">
+        <div class="app-header hidden-lg-up white lt box-shadow-z1">
+            <div class="navbar">
+                <a href="" class="navbar-brand md">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32">
+                        <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.2)"></circle>
+                        <circle cx="24" cy="24" r="22" fill="#1c202b" class="brand-color"></circle>
+                        <circle cx="24" cy="24" r="10" fill="#ffffff"></circle>
+                        <circle cx="13" cy="13" r="2"  fill="#ffffff" class="brand-animate"></circle>
+                        <path d="M 14 24 L 24 24 L 14 44 Z" fill="#FFFFFF"></path>
+                        <circle cx="24" cy="24" r="3" fill="#000000"></circle>
+                    </svg>
+                    <img src="{% static 'img/logo.png' %}" alt="." class="hide">
+                    <span class="hidden-folded inline">ITMUSIC</span>
+                </a>
+            </div>
+        </div>
+        {% block search %}
+        {% block profile %}
+        {% block music %}
+        <div class="app-body" id="view">
+            <div class="page-content">
+                <div class="row-col">
+                    <div class="col-lg-9 b-r no-border-md">
+                        <div class="padding">
+                            <div class="page-title m-b">
+                                <h1 class="inline m-a-0">MusicList</h1>
+                                <div class="dropdown inline">
+                                    <button class="btn btn-sm no-bg h4 m-y-0 v-b dropdown-toggle text-primary" data-toggle="dropdown">All</button>
+                                    <div class="dropdown-menu">
+                                        <a href="#" class="dropdown-item active">
+                                            All
+                                        </a>
+                                        {% for genre in genres %}
+                                            <a href="#" class="dropdown-item">
+                                                {{ genre }}
+                                            </a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-ui-jp="jscroll" class="jscroll-loading-center" data-ui-options="{
+                                autoTrigger: true,
+                                loadingHtml: '<i class=\'fa fa-refresh fa-spin text-md text-muted\'></i>'
+                                padding: 50,
+                                nextSelector: 'a.jscroll-next:last'}">
+                                <div class="row">
+                                    {% for music in musics %}
+                                        <div class="col-xs-4 col-sm-4 col-md-3">
+                                            <div class="item r" data-id="item-3">
+                                                <div class="item-media ">
+                                                    <a href="" class="item-media-content" style="background-image: url({{ music.image.url }});"></a>
+                                                    <div class="item-overlay center">
+                                                        <button onclick="cs_change_music('{{ music.file.url }}')" class="btn-playpause">Play</button>
+                                                    </div>
+                                                </div>
+                                                <div class="item-info">
+                                                    <div class="item-overlay bottom text-right">
+                                                        {% if user.is_authenticated %}
+                                                            {% if music not in playlist_musics %}
+                                                                <a class="btn-favorite plus" id="{{ music.pk }}"><i id="i-{{ music.pk }}" class="fa fa-plus"></i></a>
+                                                                <div class="dropdown-menu pull-right black lt"></div>
+                                                            {% else %}
+                                                                <a class="btn-favorite plus" id="{{ music.pk }}"><i id="i-{{ music.pk }}" class="fa fa-check"></i></a>
+                                                                <div class="dropdown-menu pull-right black lt"></div>
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="item-title text-ellipsis">
+                                                        <a href="{% url 'music' music.pk %}">{{ music }}</a>
+                                                    </div>
+                                                    <div class="item-author text-sm text-ellipsis ">
+                                                        <a href="" class="text-muted">{{ music.artist }}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        {% endblock %}
+        {% endblock %}
+        {% endblock %}
+
+    <audio id="audio" preload="none" controls style="width:100%;">
+        <source id="source" src="" type="audio/mpeg">
+    </audio>
+
+    </div>
+</body>

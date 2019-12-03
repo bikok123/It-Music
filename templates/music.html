@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block music %}
+    <div class="page-bg" data-stellar-ratio="2" style="background-image: url('images/a3.jpg');"></div>
+<div class="page-content">
+  <div class="padding b-b">
+    <div class="row-col">
+        <div class="col-sm w w-auto-xs m-b">
+          <div class="item w rounded">
+            <div class="item-media">
+              <div class="item-media-content" style="background-image: url({{ music.image.url }});"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="p-l-md no-padding-xs">
+            <h1 class="page-title">
+              <span class="h1 _800">{{ music }}</span>
+            </h1>
+            <p class="item-desc text-ellipsis text-muted" data-ui-toggle-class="text-ellipsis">{{ music.artist }}</p>
+            <div class="item-action m-b">
+            </div>
+            <div class="block clearfix m-b">
+              <span class="text-muted">{{ music.genre }}</span>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row-col">
+    <div class="col-lg-9 b-r no-border-md">
+      <div class="padding p-y-0 m-b-md">
+        <div class="nav-active-border b-primary bottom m-b-md m-t">
+          <ul class="nav l-h-2x" data-ui-jp="taburl">
+            <li class="nav-item m-r inline">
+              <a class="nav-link active" href="#" data-toggle="tab" data-target="#track">Track</a>
+            </li>
+            <li class="nav-item m-r inline">
+              <a class="nav-link" data-toggle="tab" data-target="#lyrics">Lyrics</a>
+            </li>
+            <li class="nav-item m-r inline">
+
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="track">
+            <div class="row item-list item-list-by m-b">
+                      <div class="col-xs-12">
+                  	<div class="item r" data-src="#">
+              			<div class="item-media ">
+              				<a href="#" class="item-media-content" style="background-image: url({{ music.image.url }});"></a>
+              				<div class="item-overlay center">
+              					<button onclick="cs_change_music('{{ music.file.url }}')" class="btn-playpause">Play</button>
+              				</div>
+              			</div>
+              			<div class="item-info">
+              				<div class="item-overlay bottom text-right">
+              					<a href="#" class="btn-favorite">{{ duration }}</a>
+              					<div class="dropdown-menu pull-right black lt"></div>
+              				</div>
+              				<div class="item-title text-ellipsis">
+              					<a href="#">{{ music }}</a>
+              				</div>
+              				<div class="item-author text-sm text-ellipsis hide">
+              					<a href="#" class="text-muted">{{ play.music }}</a>
+              				</div>
+              				<div class="item-meta text-sm text-muted">
+              		          <span class="item-meta-category"><a href="#" class="label">{{ music.genre }}</a></span>
+              		          <span class="item-meta-date text-xs">{{ music.release_date }}</span>
+              		        </div>
+              				<div class="item-action visible-list m-t-sm">
+              				</div>
+              			</div>
+              		</div>
+              	</div>
+            </div>
+          </div>
+            <div class="tab-pane" id="lyrics">
+                <pre class="font-weight-bold">{{ music.lyrics }}</pre>
+            </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
